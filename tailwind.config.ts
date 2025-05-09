@@ -48,20 +48,20 @@ export default {
       },
       keyframes: {
         "fade-in": {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         "fade-out": {
-          "0%": { opacity: 1 },
-          "100%": { opacity: 0 },
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
         "pulse-slow": {
-          "0%, 100%": { opacity: 1 },
-          "50%": { opacity: 0.7 },
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.7" },
         },
       },
       animation: {
