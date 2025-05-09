@@ -1,1 +1,40 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 252 87% 67%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 5% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 252 87% 67%;
+    --accent-foreground: 0 0% 98%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 64.9%;
+    --border: 240 5% 15%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+}
