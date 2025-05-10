@@ -43,10 +43,10 @@ export default function Hero() {
                         Aniket Raut
                     </h1>
                     <p className="text-xl md:text-2xl text-foreground/80 mb-6">
-                        Software Developer & Designer
+                        Full Stack Web Developer
                     </p>
                     <p className="text-muted-foreground max-w-md mb-8">
-                        I build exceptional digital experiences with modern technologies, focusing on creating innovative solutions to complex problems.
+                        I am a Final Year AI & ML Student at Ramdeobaba University Nagpur and a Full Stack Web Developer with experience of building multiple production websites.
                     </p>
                     <div className="flex gap-4">
                         <a
@@ -70,7 +70,7 @@ export default function Hero() {
                         <div className="relative w-full h-full rounded-full border-2 border-primary/50 overflow-hidden">
                             {/* Replace with your profile image */}
                             <div className="w-full h-full bg-secondary/50 flex items-center justify-center text-primary">
-                                Profile Image
+                                <img src="/me.jpg" alt="Profile" width={300} height={300} className="w-full h-full object-cover" />
                             </div>
                         </div>
                     </div>

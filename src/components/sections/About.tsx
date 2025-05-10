@@ -41,13 +41,19 @@ export default function About() {
 
                 <div className="glass p-8 rounded-2xl mb-12">
                     <p className="text-lg mb-6 leading-relaxed">
-                        I'm a passionate software developer with a keen interest in building modern web applications and exploring cutting-edge technologies. With a strong foundation in both front-end and back-end development, I strive to create seamless, user-centric experiences that solve real-world problems.
+                        Hello! I'm Aniket Raut, a pre-final year BTech student specializing in Artificial Intelligence and Machine Learning at Ramdeobaba University Nagpur. With a strong passion for technology and coding, I have developed expertise in React.js, Node.js, Express.js, MongoDB, and MySQL.
                     </p>
                     <p className="text-lg mb-6 leading-relaxed">
-                        My journey in technology began with a curiosity about how digital systems work, which led me to pursue formal education in computer science. Since then, I've been constantly learning and adapting to the ever-evolving tech landscape.
+                        Currently, I am a Full Stack Web Developer intern at MIMAG Technologies. In this role, I have built and deployed multiple production websites, enhancing my skills in full-stack development and practical implementation. Alongside this, I serve as the Website Manager at the Blockchain RBU Chapter, where I oversee the development and management of the club's website, ensuring its functionality and user engagement.
+                    </p>
+                    <p className="text-lg mb-6 leading-relaxed">
+                        My internship at EduSkills Foundation provided me with a solid foundation in AI and Machine Learning principles. This experience has been invaluable in enhancing my understanding of these technologies and their applications.
                     </p>
                     <p className="text-lg leading-relaxed">
-                        When I'm not coding, you might find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing and mentoring.
+                        In addition to my technical skills, I have a creative side, showcased through my interest in video editing. This unique combination allows me to approach problems with both technical precision and creative flair.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                        I believe in the power of continuous learning and collaboration for innovation. I am always looking for new challenges to grow my skills further. Let's connect to explore opportunities to create something remarkable together!
                     </p>
                 </div>
 
