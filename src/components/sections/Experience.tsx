@@ -3,6 +3,15 @@
 import { useEffect, useRef } from 'react';
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 
+interface ExperienceItem {
+    position: string;
+    company: string;
+    location: string;
+    period: string;
+    logo?: string;
+    description: string[];
+}
+
 export default function Experience() {
     const sectionRef = useRef<HTMLElement>(null);
 
@@ -28,38 +37,43 @@ export default function Experience() {
         };
     }, []);
 
-    const experienceData = [
+    const experienceData: ExperienceItem[] = [
         {
-            position: "Senior Software Engineer",
-            company: "Tech Innovations Inc.",
-            location: "City, Country",
-            period: "2022 - Present",
+            position: "Website Manager",
+            company: "Blockchain RCOEM Chapter",
+            location: "Nagpur, Maharashtra, India · On-site",
+            period: "Oct 2023 - Present",
+            logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFMUqUw16hgoQ/company-logo_100_100/company-logo_100_100/0/1679226992960?e=1752105600&v=beta&t=NsldxUZ5PumQbUKcr4rRikD9gnLhpugxPIaYimHB-qE",
             description: [
-                "Led the development of a cloud-based analytics platform using React, Node.js, and AWS.",
-                "Implemented CI/CD pipelines that reduced deployment time by 40%.",
-                "Mentored junior developers and conducted code reviews to ensure code quality."
+                "Promoted from Technical Team Member to Website Manager in October 2024.",
+                "Managing and maintaining the organization's website.",
+                "Implementing new features and ensuring optimal performance.",
+                "Collaborated with team members on blockchain-related projects.",
+                "Developed skills in teamwork and communication."
             ]
         },
         {
-            position: "Software Developer",
-            company: "Digital Solutions Ltd.",
-            location: "City, Country",
-            period: "2020 - 2022",
+            position: "Full Stack Web Developer",
+            company: "MIMAG Technologies",
+            location: "Nagpur, Maharashtra, India · Remote",
+            period: "Mar 2024 - Present",
+            logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFSh_qq3_LEyg/company-logo_100_100/company-logo_100_100/0/1638945383359?e=1752105600&v=beta&t=xFhE0vPs_QcOEEdogqnksPqLWGCQpLTE2AY1-ReC3O0",
             description: [
-                "Developed and maintained multiple web applications using modern JavaScript frameworks.",
-                "Collaborated with UX designers to implement responsive and accessible user interfaces.",
-                "Optimized database queries that improved application performance by 30%."
+                "Developing web applications using React.js, Node.js, and MongoDB.",
+                "Working with Express.js and MySQL to build robust backend systems.",
+                "Collaborating with team members to deliver high-quality software solutions."
             ]
         },
         {
-            position: "Web Development Intern",
-            company: "StartUp Ventures",
-            location: "City, Country",
-            period: "2019 - 2020",
+            position: "Open Source Contributor",
+            company: "Hacktoberfest",
+            location: "Remote",
+            period: "Oct 2024",
+            logo: "https://media.licdn.com/dms/image/v2/D4D0BAQG7leDZ_Wo5rw/company-logo_100_100/company-logo_100_100/0/1726669676583/hacktoberfest_logo?e=1752105600&v=beta&t=SfsiRx8yHOdtlVktA4gSXhTNU3nlSGoHxXQOzd5rbSc",
             description: [
-                "Assisted in the development of company website and e-commerce platform.",
-                "Created and maintained documentation for codebase and development processes.",
-                "Participated in daily stand-ups and sprint planning meetings."
+                "Contributed to open source projects during Hacktoberfest 2024.",
+                "Submitted pull requests and collaborated with project maintainers.",
+                "Gained experience with open source contribution workflows."
             ]
         }
     ];
@@ -88,8 +102,21 @@ export default function Experience() {
                             </div>
 
                             <div className="ml-6">
-                                <h3 className="text-xl font-bold mb-1">{item.position}</h3>
-                                <h4 className="text-lg font-semibold text-primary mb-2">{item.company}</h4>
+                                <div className="flex items-center gap-4 mb-3">
+                                    {item.logo && (
+                                        <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                                            <img
+                                                src={item.logo}
+                                                alt={`${item.company} logo`}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+                                    )}
+                                    <div>
+                                        <h3 className="text-xl font-bold mb-1">{item.position}</h3>
+                                        <h4 className="text-lg font-semibold text-primary mb-2">{item.company}</h4>
+                                    </div>
+                                </div>
 
                                 <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
                                     <div className="flex items-center gap-1">
