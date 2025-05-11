@@ -10,7 +10,8 @@ import {
     Code,
     FolderKanban,
     Award,
-    Mail
+    Mail,
+    BarChart2
 } from 'lucide-react';
 
 const navItems = [
@@ -18,6 +19,7 @@ const navItems = [
     { name: 'About', href: '#about', icon: User },
     { name: 'Education', href: '#education', icon: GraduationCap },
     { name: 'Experience', href: '#experience', icon: Briefcase },
+    { name: 'Coding Stats', href: '#github-stats', icon: BarChart2 },
     { name: 'Skills', href: '#skills', icon: Code },
     { name: 'Projects', href: '#projects', icon: FolderKanban },
     { name: 'Certifications', href: '#certifications', icon: Award },
