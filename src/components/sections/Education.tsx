@@ -31,16 +31,16 @@ export default function Education() {
 
     const educationData: TimelineEntry[] = [
         {
-            title: "2020 - Present",
+            title: "2022 - 2026",
             content: (
                 <div className="glass p-6 rounded-xl hover:shadow-[0_0_15px_rgba(var(--primary)/30)] transition-all">
-                    <h3 className="text-xl font-bold mb-1">BTech in Artificial Intelligence and Machine Learning</h3>
-                    <h4 className="text-lg font-semibold text-primary mb-2">Ramdeobaba University</h4>
+                    <h3 className="text-xl font-bold mb-1">Bachelor of Technology, Artificial Intelligence and Machine Learning</h3>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Shri Ramdeobaba College of Engineering and Management</h4>
 
                     <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                             <Calendar size={14} />
-                            <span>2020 - Present</span>
+                            <span>2022 - 2026</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <MapPin size={14} />
@@ -49,22 +49,22 @@ export default function Education() {
                     </div>
 
                     <p className="text-foreground/80">
-                        Currently in pre-final year, specializing in AI & ML technologies. Actively involved in various technical projects and extracurricular activities.
+                        Currently in pre-final year, specializing in AI & ML technologies. Actively involved in various technical projects and extracurricular activities. <span className="font-bold text-primary">CGPA: 8.9</span>
                     </p>
                 </div>
             )
         },
         {
-            title: "2018 - 2020",
+            title: "Jul 2020 - May 2022",
             content: (
                 <div className="glass p-6 rounded-xl hover:shadow-[0_0_15px_rgba(var(--primary)/30)] transition-all">
-                    <h3 className="text-xl font-bold mb-1">Higher Secondary Education</h3>
-                    <h4 className="text-lg font-semibold text-primary mb-2">High School</h4>
+                    <h3 className="text-xl font-bold mb-1">HSC, Science with Vocational Subject Electronics</h3>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Tejaswini Junior College</h4>
 
                     <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                             <Calendar size={14} />
-                            <span>2018 - 2020</span>
+                            <span>Jul 2020 - May 2022</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <MapPin size={14} />
@@ -73,22 +73,22 @@ export default function Education() {
                     </div>
 
                     <p className="text-foreground/80">
-                        Completed higher secondary education with focus on Science and Mathematics.
+                        Completed higher secondary education with a focus on Science and Mathematics. <span className="font-bold text-primary">Grade: 87%</span>
                     </p>
                 </div>
             )
         },
         {
-            title: "2016 - 2018",
+            title: "Mar 2019 - Apr 2020",
             content: (
                 <div className="glass p-6 rounded-xl hover:shadow-[0_0_15px_rgba(var(--primary)/30)] transition-all">
-                    <h3 className="text-xl font-bold mb-1">Secondary Education</h3>
-                    <h4 className="text-lg font-semibold text-primary mb-2">Secondary School</h4>
+                    <h3 className="text-xl font-bold mb-1">SSC</h3>
+                    <h4 className="text-lg font-semibold text-primary mb-2">Bhange Public School</h4>
 
                     <div className="flex flex-wrap gap-4 mb-4 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1">
                             <Calendar size={14} />
-                            <span>2016 - 2018</span>
+                            <span>Mar 2019 - Apr 2020</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <MapPin size={14} />
@@ -97,7 +97,7 @@ export default function Education() {
                     </div>
 
                     <p className="text-foreground/80">
-                        Completed secondary education with excellent academic performance.
+                        Completed secondary education with excellent academic performance. <span className="font-bold text-primary">Grade: 89%</span>
                     </p>
                 </div>
             )
