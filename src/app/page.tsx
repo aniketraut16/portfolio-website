@@ -8,10 +8,12 @@ import Projects from '@/components/sections/Projects';
 import Certifications from '@/components/sections/Certifications';
 import Contact from '@/components/sections/Contact';
 import BackgroundEffects from '@/components/BackgroundEffects';
+import CursorFollower from '@/components/CursorFollower';
 
 export default function Home() {
   return (
     <main className="relative">
+      <CursorFollower />
       <BackgroundEffects />
 
       <div className="container mx-auto px-4">
