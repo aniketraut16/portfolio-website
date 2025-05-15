@@ -30,47 +30,157 @@ export default function Certifications() {
 
     const certifications = [
         {
-            name: "AWS Certified Solutions Architect",
-            issuer: "Amazon Web Services",
-            date: "June 2023",
-            credentialId: "AWS-12345",
-            credentialURL: "#",
+            name: "Build Basic Generative Adversarial Networks (GANs)",
+            issuer: "DeepLearning.AI",
+            date: "Mar 2025",
+            credentialId: "WAMD3SUT40K8",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/WAMD3SUT40K8",
+            skills: "Generative AI"
         },
         {
-            name: "Google Cloud Professional Developer",
-            issuer: "Google Cloud",
-            date: "March 2023",
-            credentialId: "GCP-67890",
-            credentialURL: "#",
+            name: "Build Better Generative Adversarial Networks (GANs)",
+            issuer: "DeepLearning.AI",
+            date: "Mar 2025",
+            credentialId: "30WHTO5M8VKG",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/30WHTO5M8VKG",
+            skills: "Generative AI"
         },
         {
-            name: "Meta Frontend Developer Professional Certificate",
-            issuer: "Meta (Facebook)",
-            date: "January 2023",
-            credentialId: "META-24680",
-            credentialURL: "#",
+            name: "Tailwind Basics",
+            issuer: "Scrimba",
+            date: "Feb 2025",
+            credentialId: "RDZ9IOAHV4R6",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/RDZ9IOAHV4R6",
+            skills: "Tailwind CSS"
         },
         {
-            name: "Microsoft Certified: Azure Developer Associate",
-            issuer: "Microsoft",
-            date: "November 2022",
-            credentialId: "MSFT-13579",
-            credentialURL: "#",
+            name: "English for IT",
+            issuer: "Cisco Networking Academy",
+            date: "Dec 2024",
+            credentialId: "34626111-ee2a-4853-9a78-d2394a2b90de",
+            credentialURL: "https://www.credly.com/badges/34626111-ee2a-4853-9a78-d2394a2b90de/public_url",
+            skills: "English"
         },
         {
-            name: "TensorFlow Developer Certificate",
-            issuer: "Google",
-            date: "September 2022",
-            credentialId: "TF-97531",
-            credentialURL: "#",
+            name: "Fundamentals of Cybersecurity (EDU-102)",
+            issuer: "Zscaler",
+            date: "Dec 2024 · Expires Dec 2026",
+            credentialId: "mvq33hh8v4pp",
+            credentialURL: "https://verify.skilljar.com/c/mvq33hh8v4pp",
+            skills: ""
         },
         {
-            name: "Blockchain Developer Certification",
-            issuer: "Ethereum Foundation",
-            date: "July 2022",
-            credentialId: "ETH-86420",
-            credentialURL: "#",
+            name: "Generative AI: Tools, Techniques and Applications",
+            issuer: "Ramdeobaba University (RBU) Nagpur",
+            date: "Dec 2024",
+            credentialId: "",
+            credentialURL: "https://drive.google.com/file/d/1yrA_eyz2wt7pGkUNr190gNmLiVLquuHb/view",
+            skills: "Generative AI"
         },
+        {
+            name: "Networking Basics",
+            issuer: "Cisco Networking Academy",
+            date: "Dec 2024",
+            credentialId: "647046fb-929a-4243-aaf9-2f3e414b5578",
+            credentialURL: "https://www.credly.com/badges/647046fb-929a-4243-aaf9-2f3e414b5578/public_url",
+            skills: "Computer Networking"
+        },
+        {
+            name: "Django Web Framework",
+            issuer: "Coursera",
+            date: "Nov 2024",
+            credentialId: "RK2U5JD8H4LP",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/RK2U5JD8H4LP",
+            skills: "Django"
+        },
+        {
+            name: "Tata Group - Data Visualisation: Empowering Business with Effective Insights Job Simulation",
+            issuer: "Forage",
+            date: "Nov 2024",
+            credentialId: "ea3auxRbZofRra7Kf",
+            credentialURL: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_EymqT7YjgXE6Li9fr_1732188699958_completion_certificate.pdf",
+            skills: ""
+        },
+        {
+            name: "Learn TypeScript",
+            issuer: "Scrimba",
+            date: "Oct 2024",
+            credentialId: "MS4BCHZK9S0B",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/MS4BCHZK9S0B",
+            skills: "TypeScript"
+        },
+        {
+            name: "Back-end Application Development with Node.js and Express",
+            issuer: "edX",
+            date: "May 2024",
+            credentialId: "05e30f2cd5f2492ca2a1a8e99bcd19dc",
+            credentialURL: "#",
+            skills: "Express.js · Node.js"
+        },
+        {
+            name: "Introduction to Cloud Computing",
+            issuer: "edX",
+            date: "May 2024",
+            credentialId: "3e46350dcc374370821744a85b76c989",
+            credentialURL: "https://courses.edx.org/certificates/05e30f2cd5f2492ca2a1a8e99bcd19dc",
+            skills: ""
+        },
+        {
+            name: "Introduction to Cloud Native, DevOps, Agile, and NoSQL",
+            issuer: "edX",
+            date: "May 2024",
+            credentialId: "333e44d3391b4659b093576901a17fe5",
+            credentialURL: "https://courses.edx.org/certificates/333e44d3391b4659b093576901a17fe5",
+            skills: ""
+        },
+        {
+            name: "Introduction to Web Development with HTML5, CSS3, and JavaScript",
+            issuer: "edX",
+            date: "May 2024",
+            credentialId: "56c23aba3ae2482699b8bf08326bf81c",
+            credentialURL: "https://courses.edx.org/certificates/56c23aba3ae2482699b8bf08326bf81c",
+            skills: "Cascading Style Sheets (CSS) · JavaScript · HTML5"
+        },
+        {
+            name: "Introduction to Jenkins",
+            issuer: "The Linux Foundation",
+            date: "Apr 2024",
+            credentialId: "c02d57aa5ba64a7e8aae8f1a9d478835",
+            credentialURL: "https://courses.edx.org/certificates/c02d57aa5ba64a7e8aae8f1a9d478835",
+            skills: ""
+        },
+        {
+            name: "Introduction to Linux",
+            issuer: "The Linux Foundation",
+            date: "Apr 2024",
+            credentialId: "8b17a0111c464bf790080ae3bd4bc7e9",
+            credentialURL: "https://courses.edx.org/certificates/8b17a0111c464bf790080ae3bd4bc7e9",
+            skills: "Linux"
+        },
+        {
+            name: "Blockchain: Understanding Its Uses and Implications",
+            issuer: "The Linux Foundation",
+            date: "Dec 2023",
+            credentialId: "59b418d94f7e49a89c6e53d84ad033fe",
+            credentialURL: "https://courses.edx.org/certificates/59b418d94f7e49a89c6e53d84ad033fe",
+            skills: "Blockchain"
+        },
+        {
+            name: "Frontend Development using React",
+            issuer: "Board Infinity",
+            date: "Nov 2023",
+            credentialId: "GK6SYMQF2S6C",
+            credentialURL: "https://www.coursera.org/account/accomplishments/verify/GK6SYMQF2S6C",
+            skills: "React.js"
+        },
+        {
+            name: "Complete Python Developer",
+            issuer: "Udemy",
+            date: "Mar 2023",
+            credentialId: "UC-51b084f7-880a-4c2d-8d88-5f8a11e5d3fa",
+            credentialURL: "https://www.udemy.com/certificate/UC-51b084f7-880a-4c2d-8d88-5f8a11e5d3fa/",
+            skills: "Python (Programming Language)"
+        }
     ];
 
     return (
@@ -106,9 +216,17 @@ export default function Certifications() {
                                     <span>{cert.date}</span>
                                 </div>
 
-                                <div className="text-sm text-muted-foreground mb-3">
-                                    Credential ID: {cert.credentialId}
-                                </div>
+                                {cert.credentialId && (
+                                    <div className="text-sm text-muted-foreground mb-3">
+                                        Credential ID: {cert.credentialId}
+                                    </div>
+                                )}
+
+                                {cert.skills && (
+                                    <div className="text-sm text-muted-foreground mb-3">
+                                        Skills: {cert.skills}
+                                    </div>
+                                )}
 
                                 <a
                                     href={cert.credentialURL}
@@ -117,7 +235,7 @@ export default function Certifications() {
                                     className="inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-primary transition-colors"
                                 >
                                     <ExternalLink size={14} />
-                                    <span>Verify Certificate</span>
+                                    <span>Show Certificate</span>
                                 </a>
                             </div>
                         </div>
