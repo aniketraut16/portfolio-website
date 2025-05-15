@@ -31,56 +31,83 @@ export default function Projects() {
 
     const projects = [
         {
-            title: "Modern E-commerce Platform",
-            description: "A full-stack e-commerce application with user authentication, product management, and payment integration.",
-            image: "/placeholder.jpg",
-            technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+            title: "Psycortex Online Education",
+            description: "An e-learning platform developed during internship, facilitating online courses and educational content delivery.",
+            image: "/projects/web/poe.png",
+            technologies: ["React", "Node.js", "MongoDB", "Express"],
             category: "web",
             demoLink: "#",
             githubLink: "#",
         },
         {
-            title: "AI Image Generator",
-            description: "An application that generates unique images based on text prompts using machine learning models.",
-            image: "/placeholder.jpg",
-            technologies: ["Python", "TensorFlow", "React", "Flask"],
-            category: "ai",
-            demoLink: "#",
-            githubLink: "#",
-        },
-        {
-            title: "Fitness Tracking App",
-            description: "A mobile application that helps users track workouts, nutrition, and health metrics.",
-            image: "/placeholder.jpg",
-            technologies: ["React Native", "Firebase", "Redux", "Chart.js"],
-            category: "mobile",
-            demoLink: "#",
-            githubLink: "#",
-        },
-        {
-            title: "Personal Finance Dashboard",
-            description: "A dashboard for tracking personal finances, expenses, and investments with data visualization.",
-            image: "/placeholder.jpg",
-            technologies: ["Vue.js", "D3.js", "Express", "PostgreSQL"],
+            title: "Psycortex Appointment Booking System",
+            description: "A comprehensive system for scheduling and managing appointments, built during internship.",
+            image: "/projects/web/pas.png",
+            technologies: ["React", "Node.js", "MongoDB", "Redux"],
             category: "web",
             demoLink: "#",
             githubLink: "#",
         },
         {
-            title: "Smart Home IoT System",
-            description: "An IoT system for controlling and monitoring smart home devices from a central dashboard.",
-            image: "/placeholder.jpg",
-            technologies: ["Raspberry Pi", "MQTT", "React", "Node.js"],
-            category: "iot",
+            title: "Joanna Dass Portfolio Website",
+            description: "A professional portfolio website designed and developed during internship.",
+            image: "/placeholder.svg",
+            technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+            category: "web",
             demoLink: "#",
             githubLink: "#",
         },
         {
-            title: "Blockchain Explorer",
-            description: "A web application for exploring blockchain transactions and smart contracts.",
-            image: "/placeholder.jpg",
-            technologies: ["Ethereum", "Web3.js", "Next.js", "Tailwind CSS"],
-            category: "blockchain",
+            title: "Knowledge Ninjas",
+            description: "A collaborative knowledge-sharing web platform for teams and communities.",
+            image: "/placeholder.svg",
+            technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+            category: "web",
+            demoLink: "#",
+            githubLink: "#",
+        },
+        {
+            title: "Automatic Attendance Marking System",
+            description: "An AI-powered system that automates attendance tracking using facial recognition and machine learning.",
+            image: "/placeholder.svg",
+            technologies: ["Python", "TensorFlow", "OpenCV", "Flask"],
+            category: "aiml",
+            demoLink: "#",
+            githubLink: "#",
+        },
+        {
+            title: "Query Nexus",
+            description: "An intelligent search and query system powered by natural language processing and machine learning algorithms.",
+            image: "/placeholder.svg",
+            technologies: ["Python", "BERT", "React", "FastAPI"],
+            category: "aiml",
+            demoLink: "#",
+            githubLink: "#",
+        },
+        {
+            title: "Crossword Game",
+            description: "An interactive crossword puzzle game with customizable difficulty levels and themes.",
+            image: "/placeholder.svg",
+            technologies: ["JavaScript", "HTML5", "CSS3", "Canvas API"],
+            category: "games",
+            demoLink: "#",
+            githubLink: "#",
+        },
+        {
+            title: "Quiz App",
+            description: "A dynamic quiz application with multiple categories and real-time scoring.",
+            image: "/placeholder.svg",
+            technologies: ["React", "Firebase", "CSS Animations"],
+            category: "games",
+            demoLink: "#",
+            githubLink: "#",
+        },
+        {
+            title: "Express App Generator CLI",
+            description: "A command-line tool that generates Express.js applications with support for different ORMs and configurations.",
+            image: "/placeholder.svg",
+            technologies: ["Node.js", "Commander.js", "Inquirer", "Express"],
+            category: "tools",
             demoLink: "#",
             githubLink: "#",
         },
@@ -89,10 +116,9 @@ export default function Projects() {
     const filters = [
         { id: 'all', label: 'All' },
         { id: 'web', label: 'Web' },
-        { id: 'mobile', label: 'Mobile' },
-        { id: 'ai', label: 'AI/ML' },
-        { id: 'blockchain', label: 'Blockchain' },
-        { id: 'iot', label: 'IoT' },
+        { id: 'games', label: 'Games' },
+        { id: 'aiml', label: 'AI/ML' },
+        { id: 'tools', label: 'Tools' },
     ];
 
     const filteredProjects = activeFilter === 'all'
@@ -117,8 +143,8 @@ export default function Projects() {
                                 key={filter.id}
                                 onClick={() => setActiveFilter(filter.id)}
                                 className={`px-4 py-2 rounded-full text-sm transition-all ${activeFilter === filter.id
-                                        ? 'bg-primary text-primary-foreground'
-                                        : 'bg-secondary text-foreground/70 hover:text-primary'
+                                    ? 'bg-primary text-primary-foreground'
+                                    : 'bg-secondary text-foreground/70 hover:text-primary'
                                     }`}
                             >
                                 {filter.label}
@@ -137,7 +163,7 @@ export default function Projects() {
                             {/* Project Image */}
                             <div className="h-48 bg-secondary/50 relative overflow-hidden">
                                 <div className="absolute inset-0 flex items-center justify-center text-primary/50">
-                                    Project Image
+                                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                                 </div>
                                 <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
