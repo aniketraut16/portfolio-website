@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-    const sectionRef = useRef<HTMLElement>(null);
+    const sectionRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -12,7 +13,8 @@ export default function Contact() {
         message: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<null | 'success' | 'error'>(null);
+    const [submitStatus, setSubmitStatus] = useState<string | null>(null);
+    const [cooldownRemaining, setCooldownRemaining] = useState<number | null>(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -29,6 +31,18 @@ export default function Contact() {
             observer.observe(sectionRef.current);
         }
 
+        // Check if user is in cooldown period
+        const lastEmailSent = localStorage.getItem('lastEmailSent');
+        if (lastEmailSent) {
+            const timeSinceLastEmail = Date.now() - parseInt(lastEmailSent);
+            const oneHourInMs = 60 * 60 * 1000;
+
+            if (timeSinceLastEmail < oneHourInMs) {
+                const remainingTime = Math.ceil((oneHourInMs - timeSinceLastEmail) / (60 * 1000));
+                setCooldownRemaining(remainingTime);
+            }
+        }
+
         return () => {
             if (sectionRef.current) {
                 observer.unobserve(sectionRef.current);
@@ -36,24 +50,56 @@ export default function Contact() {
         };
     }, []);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsSubmitting(true);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
+        // Check if user is in cooldown period
+        const lastEmailSent = localStorage.getItem('lastEmailSent');
+        if (lastEmailSent) {
+            const timeSinceLastEmail = Date.now() - parseInt(lastEmailSent);
+            const oneHourInMs = 60 * 60 * 1000;
+
+            if (timeSinceLastEmail < oneHourInMs) {
+                const remainingTime = Math.ceil((oneHourInMs - timeSinceLastEmail) / (60 * 1000));
+                setCooldownRemaining(remainingTime);
+                setSubmitStatus('cooldown');
+                return;
+            }
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
+                {
+                    name: formData.name,
+                    subject: formData.subject,
+                    message: formData.message,
+                    email: formData.email, // Optional: included for reply-to or logging
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ""
+            );
+
+            // Store the timestamp of successful email send
+            localStorage.setItem('lastEmailSent', Date.now().toString());
+
             setSubmitStatus('success');
             setFormData({ name: '', email: '', subject: '', message: '' });
-
-            // Reset status after 5 seconds
             setTimeout(() => setSubmitStatus(null), 5000);
-        }, 1500);
+        } catch (error) {
+            console.error('EmailJS error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -81,26 +127,13 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-semibold mb-1">Email</h3>
-                                    <a href="mailto:example@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                                        example@example.com
+                                    <a href="mailto:rautnaniket@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                                        rautnaniket@gmail.com
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="glass p-6 rounded-xl">
-                            <div className="flex gap-4 items-start">
-                                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                                    <Phone size={20} className="text-primary" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold mb-1">Phone</h3>
-                                    <a href="tel:+1234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                                        +1 (234) 567-890
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
 
                         <div className="glass p-6 rounded-xl">
                             <div className="flex gap-4 items-start">
@@ -109,19 +142,16 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-semibold mb-1">Location</h3>
-                                    <p className="text-muted-foreground">
-                                        City, Country
-                                    </p>
+                                    <p className="text-muted-foreground">Nagpur, Maharashtra, India</p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Social Links */}
                         <div className="glass p-6 rounded-xl">
                             <h3 className="text-lg font-semibold mb-4">Connect With Me</h3>
                             <div className="flex gap-4">
                                 <a
-                                    href="#"
+                                    href="https://github.com/aniketraut16"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
@@ -129,7 +159,7 @@ export default function Contact() {
                                     <Github size={20} className="text-primary" />
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://www.linkedin.com/in/aniketraut16/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
@@ -137,7 +167,7 @@ export default function Contact() {
                                     <Linkedin size={20} className="text-primary" />
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://x.com/aniketraut22"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center hover:bg-primary/20 transition-colors"
@@ -206,7 +236,7 @@ export default function Contact() {
                                     id="message"
                                     name="message"
                                     value={formData.message}
-                                    onChange={handleChange}
+                                    onChange={(e) => handleChange(e as unknown as React.ChangeEvent<HTMLInputElement>)}
                                     required
                                     rows={5}
                                     className="w-full px-4 py-3 bg-secondary/50 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all resize-none"
@@ -215,7 +245,7 @@ export default function Contact() {
 
                             <button
                                 type="submit"
-                                disabled={isSubmitting}
+                                disabled={isSubmitting || cooldownRemaining !== null}
                                 className="px-6 py-3 bg-primary text-primary-foreground rounded-full flex items-center justify-center gap-2 hover:shadow-[0_0_15px_rgba(var(--primary)/60)] transition-all disabled:opacity-70 disabled:cursor-not-allowed w-full md:w-auto"
                             >
                                 {isSubmitting ? (
@@ -242,10 +272,16 @@ export default function Contact() {
                                     There was an error sending your message. Please try again.
                                 </div>
                             )}
+
+                            {(submitStatus === 'cooldown' || cooldownRemaining !== null) && (
+                                <div className="mt-4 p-3 bg-yellow-500/20 border border-yellow-500/50 rounded-lg text-yellow-400">
+                                    <p>You can only send one message per hour. Please wait {cooldownRemaining} minute{cooldownRemaining !== 1 ? 's' : ''} or contact me directly at <a href="mailto:rautnaniket@gmail.com" className="underline">rautnaniket@gmail.com</a>.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>
             </div>
         </section>
     );
-} 
+}

@@ -49,15 +49,6 @@ export default function Projects() {
             githubLink: "#",
         },
         {
-            title: "Joanna Dass Portfolio Website",
-            description: "A professional portfolio website designed and developed during internship.",
-            image: "/placeholder.svg",
-            technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-            category: "web",
-            demoLink: "#",
-            githubLink: "#",
-        },
-        {
             title: "Knowledge Ninjas",
             description: "A collaborative knowledge-sharing web platform for teams and communities.",
             image: "/placeholder.svg",
@@ -105,11 +96,11 @@ export default function Projects() {
         {
             title: "Express App Generator CLI",
             description: "A command-line tool that generates Express.js applications with support for different ORMs and configurations.",
-            image: "/placeholder.svg",
-            technologies: ["Node.js", "Commander.js", "Inquirer", "Express"],
+            image: "/projects/tools/express.png",
+            technologies: ["Node.js", "Inquirer", "npm"],
             category: "tools",
-            demoLink: "#",
-            githubLink: "#",
+            demoLink: "https://www.npmjs.com/package/express-starter-cli",
+            githubLink: "https://github.com/aniketraut16/express-starter-cli.git",
         },
     ];
 
