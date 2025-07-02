@@ -15,6 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <meta name="google-site-verification" content="snKC1XNMMcYuA4AzQro23oQfJbK2EWrcePluY6eMa-A" />
+      </head>
       <body className="min-h-screen bg-background text-foreground relative">
         <div className="relative z-10">
           {children}
